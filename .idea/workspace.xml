@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef553684-fa5d-40c9-acd8-706e2827b8ea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/examples/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/microbit/01-basic-shake-and-buttons/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/microbit/basic-shake-and-button-press.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="ef553684-fa5d-40c9-acd8-706e2827b8ea" name="Changes" comment="Add basic example in Python and makecode.">
+      <change afterPath="$PROJECT_DIR$/examples/microbit/mario-health-indicator/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +51,10 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/silas/repos/microbit-maqueen-knowledge-base",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
@@ -62,6 +62,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/examples/microbit" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -70,11 +75,59 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1702216365373</updated>
-      <workItem from="1702216366527" duration="245000" />
+      <workItem from="1702216366527" duration="1901000" />
     </task>
+    <task id="LOCAL-00001" summary="Set up IntelliJ project.">
+      <option name="closed" value="true" />
+      <created>1702216969432</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702216969432</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Set up IntelliJ project.">
+      <option name="closed" value="true" />
+      <created>1702216975750</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702216975750</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Gitignore venv.">
+      <option name="closed" value="true" />
+      <created>1702216985571</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1702216985571</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update readme.">
+      <option name="closed" value="true" />
+      <created>1702216995486</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1702216995486</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add basic example in Python and makecode.">
+      <option name="closed" value="true" />
+      <created>1702217005473</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702217005473</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Set up IntelliJ project." />
+    <MESSAGE value="Gitignore venv." />
+    <MESSAGE value="Update readme." />
+    <MESSAGE value="Add basic example in Python and makecode." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add basic example in Python and makecode." />
   </component>
 </project>
