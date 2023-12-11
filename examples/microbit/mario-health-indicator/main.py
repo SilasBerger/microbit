@@ -1,7 +1,7 @@
 # Imports go at the top
 from microbit import *
 from sounds import play_hit_sound, play_death_sound
-from health_indiciator import show_health, HealthLevel
+from health_indicator import show_health, HealthLevel
 
 # We start with full health, and we show that on the screen.
 health = HealthLevel.FULL
