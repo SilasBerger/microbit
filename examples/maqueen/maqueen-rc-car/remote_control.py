@@ -1,5 +1,7 @@
 from math import *
 from microbit import *
+from helper import *
+import radio
 
 # Define allowed max speed (0-255)
 MAX_SPEED = 100
@@ -36,4 +38,18 @@ def calculate_speed_command():
     speed_left = round(base_motor_speed * factor_left)
     speed_right = round(base_motor_speed * factor_right)
 
-    return str(speed_left) + ':' + str(speed_right) + ';'
+    return str(speed_left) + ':' + str(speed_right)
+
+def remote_control_send_update(mode):
+    # We are in driving mode, send update command
+    if mode == Mode.REMOTE_CONTROL_DRIVING:
+        speed_command = calculate_speed_command()
+        print('[RC] Sending speed upate: ' + speed_command)
+        radio.send(speed_command)
+    # We are in parking mode, just print and info
+    elif mode == Mode.REMOTE_CONTROL_PARKING:
+        print('[RC] Parking')
+    sleep(POLL_DELAY)
+
+def remote_control_stop():
+    radio.send('0:0')
