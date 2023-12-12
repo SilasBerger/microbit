@@ -6,8 +6,8 @@ import radio
 # Define allowed max speed (0-255)
 _MAX_SPEED = 100
 
-# Wait this many seconds between sensor reading cycles
-_POLL_DELAY = 1000
+# Wait this many milliseconds between speed updates
+_POLL_DELAY = 200
 
 def _calculate_speed_command():
     # Get x and z acceleration
