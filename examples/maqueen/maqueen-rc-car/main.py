@@ -23,6 +23,7 @@ def toggle_operation_mode():
     # We were in car controller mode, switch to "remote control: parking"
     elif mode == Mode.CAR_CONTROLLER:
         mode = Mode.REMOTE_CONTROL_PARKING
+        remote_control_send_init_command()
         display_indicate_remote_control_parking()
 
 # Define a function that toggles the remote control between "parking" and "driving"
@@ -31,6 +32,7 @@ def remote_control_toggle_parking_and_driving():
     # We were in parking mode, switch to driving
     if mode == Mode.REMOTE_CONTROL_PARKING:
         mode = Mode.REMOTE_CONTROL_DRIVING
+        remote_control_send_init_command()
         display_indicate_remote_control_driving()
     # We were in driving mode, send stop command and switch to parking
     elif mode == Mode.REMOTE_CONTROL_DRIVING:
@@ -54,7 +56,7 @@ while True:
 
     # This microbit is in car controller mode, process speed command
     elif mode == Mode.CAR_CONTROLLER:
-        car_controller_process_speed_command()
+        car_controller_process_command()
 
     # Something went wrong, we don't know that mode...
     else:

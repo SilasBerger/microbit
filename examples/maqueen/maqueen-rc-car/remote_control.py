@@ -32,7 +32,7 @@ def calculate_speed_command():
     #   if tilt = -1: run motor right at base speed, motor left 0
     #   if tilt = 0: run both motors at base speed
     factor_left = min(1, deg_x_norm + 1)
-    factor_right = min(1, 1-deg_x_norm)
+    factor_right = min(1, 1 - deg_x_norm)
 
     # Apply steering factors
     speed_left = round(base_motor_speed * factor_left)
@@ -53,3 +53,6 @@ def remote_control_send_update(mode):
 
 def remote_control_send_stop_command():
     radio.send('0:0')
+
+def remote_control_send_init_command():
+    radio.send('init')
