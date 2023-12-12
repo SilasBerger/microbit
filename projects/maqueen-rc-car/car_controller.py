@@ -1,11 +1,8 @@
 from microbit import *
-from maqueen import *
-from helper import *
+from mockueen import * # TODO: Change this back to the regular library.
+from helper import play_system_error_alarm, play_driver_error_alarm
+from config import OBSTACLE_DETECTION_ENABLED, SAFETY_DISTANCE_CM
 import radio
-
-# Configure obstable detection
-_SAFETY_DISTANCE_CM = 50
-_OBSTACLE_DETECTION_ENABLED = True
 
 # If this is set to True, no motor speed updates be applied
 _failsafe_engaged = False
@@ -25,7 +22,7 @@ def _update_motor_speeds(command):
 
     # Split the message at the ':' and set the motor speeds
     (speed_left, speed_right) = command.split(':')
-    print('motor left = ' + speed_left + ', motor right = ' + speed_right)
+    print('[CAR] motor left = ' + speed_left + ', motor right = ' + speed_right)
     motor_run(Motor.LEFT, int(speed_left))
     motor_run(Motor.RIGHT, int(speed_right))
 
@@ -44,7 +41,7 @@ def _read_next_command():
     # We don't know this command - something's off, engage failsafe!
     else:
         _engage_failsafe()
-        print('Unexpected command: ' + command)
+        print('[CAR] Unexpected command: ' + command)
         play_system_error_alarm()
 
 # Try reading and processing the next command,
@@ -60,6 +57,7 @@ def car_controller_process_command():
 # Stop motors, reset failsafe, purge buffered radio messages
 def car_controller_initialize():
     global _failsafe_engaged
+    print('[CAR] Initializing...')
     _stop_motors()
     _failsafe_engaged = False
     has_radio_messages = True
@@ -70,12 +68,12 @@ def car_controller_initialize():
 # Check ultrasonic sensor against safety distance, engage
 # failsafe if an obstacle is too close
 def car_controller_verify_no_obstacles():
-    if not _OBSTACLE_DETECTION_ENABLED:
+    if not OBSTACLE_DETECTION_ENABLED:
         return
 
     distance_cm = ultrasonic()
-    if distance_cm < _SAFETY_DISTANCE_CM:
+    if distance_cm < SAFETY_DISTANCE_CM:
         _engage_failsafe()
-        print('Obstacle detected: ' + str(distance_cm) + 'cm')
+        print('[CAR] Obstacle detected: ' + str(distance_cm) + 'cm')
         play_driver_error_alarm()
 

@@ -1,12 +1,13 @@
 from microbit import *
 from remote_control import *
 from car_controller import *
-from helper import *
+from helper import display_indicate_car_controller_mode, display_indicate_remote_control_parking, display_indicate_remote_control_driving
+from config import RADIO_GROUP, RADIO_POWER_LEVEL
 import radio
 
 # Configure radio
 radio.on()
-radio.config(group=23, power=5)
+radio.config(group=RADIO_GROUP, power=RADIO_POWER_LEVEL)
 
 # Set this Microbit to mode "remote control: parking" by default
 _mode = Mode.REMOTE_CONTROL_PARKING

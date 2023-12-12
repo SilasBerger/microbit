@@ -1,13 +1,8 @@
 from math import *
 from microbit import *
-from helper import *
+from helper import Mode
+from config import MAX_SPEED, POLL_DELAY
 import radio
-
-# Define allowed max speed (0-255)
-_MAX_SPEED = 100
-
-# Wait this many milliseconds between speed updates
-_POLL_DELAY = 200
 
 def _calculate_speed_command():
     # Get x and z acceleration
@@ -22,7 +17,7 @@ def _calculate_speed_command():
 
     # Transform tilt along z axis to range [0, 45]°, normalize and map to speed range
     tilt_z_norm = min(45, -1 * min(0, deg_z)) / 45
-    base_motor_speed = tilt_z_norm * _MAX_SPEED
+    base_motor_speed = tilt_z_norm * MAX_SPEED
 
     # Transform tilt along x axis to range [-45, 45]° and normalize to [-1, 1]
     deg_x_norm = min(45, max(-45, deg_x)) / 45
@@ -49,7 +44,7 @@ def remote_control_send_update(mode):
     # We are in parking mode, just print and info
     elif mode == Mode.REMOTE_CONTROL_PARKING:
         print('[RC] Parking')
-    sleep(_POLL_DELAY)
+    sleep(POLL_DELAY)
 
 def remote_control_send_stop_command():
     radio.send('0:0')
