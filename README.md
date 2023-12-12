@@ -1,5 +1,6 @@
 # Knowledge Base Microbit and Maqueen
-A central place for code snippets, ideas, learnings and experiments with Microbit and Maqueen.
+A central place for code snippets, ideas, learnings and experiments with Microbit and Maqueen. Unless stated otherwise,
+all projects are developed within the [Microbit Python editor](https://python.microbit.org/v/3/project).
 
 ## MakeCode Editor
 * https://makecode.microbit.org/#editor
@@ -13,3 +14,6 @@ A central place for code snippets, ideas, learnings and experiments with Microbi
 * https://python.microbit.org/v/3/reference/sound
 * No cloud save functionality (?)
 * Drag & drop API reference
+
+## Maqueen library
+https://gbsl-informatik.github.io/maqueen-plus-v2-mpy/docs/
