@@ -12,13 +12,13 @@ POLL_DELAY = 1000
 def calculate_speed_command():
     # Get x and z acceleration
     (acc_x, acc_z) = (
-        min(accelerometer.get_x(), 1024)/1024,
-        min(accelerometer.get_z(), 1024)/1024,
+        min(accelerometer.get_x(), 1024) / 1024,
+        min(accelerometer.get_z(), 1024) / 1024,
     )
 
     # Calculate tilt angle along x and z axes
-    deg_x = atan(acc_x)*(180/pi)
-    deg_z = atan(acc_z)*(180/pi)
+    deg_x = atan(acc_x) * (180 / pi)
+    deg_z = atan(acc_z) * (180 / pi)
 
     # Transform tilt along z axis to range [0, 45]° and map to speed range
     tilt_z_norm = min(45, -1 * min(0, deg_z)) / 45
@@ -51,5 +51,5 @@ def remote_control_send_update(mode):
         print('[RC] Parking')
     sleep(POLL_DELAY)
 
-def remote_control_stop():
+def remote_control_send_stop_command():
     radio.send('0:0')

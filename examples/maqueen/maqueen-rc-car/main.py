@@ -18,6 +18,7 @@ def toggle_operation_mode():
     # We were in remote control mode, switch to car control
     if mode == Mode.REMOTE_CONTROL_PARKING or mode == Mode.REMOTE_CONTROL_DRIVING:
         mode = Mode.CAR_CONTROLLER
+        car_controller_initialize()
         display_indicate_car_controller_mode()
     # We were in car controller mode, switch to "remote control: parking"
     elif mode == Mode.CAR_CONTROLLER:
@@ -34,7 +35,7 @@ def remote_control_toggle_parking_and_driving():
     # We were in driving mode, send stop command and switch to parking
     elif mode == Mode.REMOTE_CONTROL_DRIVING:
         mode = Mode.REMOTE_CONTROL_PARKING
-        remote_control_stop()
+        remote_control_send_stop_command()
         display_indicate_remote_control_parking()
 
 # Continuously read the sensors and send an updated speed command
