@@ -4,12 +4,12 @@ from helper import *
 import radio
 
 # Define allowed max speed (0-255)
-MAX_SPEED = 100
+_MAX_SPEED = 100
 
 # Wait this many seconds between sensor reading cycles
-POLL_DELAY = 1000
+_POLL_DELAY = 1000
 
-def calculate_speed_command():
+def _calculate_speed_command():
     # Get x and z acceleration
     (acc_x, acc_z) = (
         min(accelerometer.get_x(), 1024) / 1024,
@@ -20,11 +20,11 @@ def calculate_speed_command():
     deg_x = atan(acc_x) * (180 / pi)
     deg_z = atan(acc_z) * (180 / pi)
 
-    # Transform tilt along z axis to range [0, 45]° and map to speed range
+    # Transform tilt along z axis to range [0, 45]°, normalize and map to speed range
     tilt_z_norm = min(45, -1 * min(0, deg_z)) / 45
-    base_motor_speed = tilt_z_norm * MAX_SPEED
+    base_motor_speed = tilt_z_norm * _MAX_SPEED
 
-    # Transform tilt along x axis to range [-45, 45]°
+    # Transform tilt along x axis to range [-45, 45]° and normalize to [-1, 1]
     deg_x_norm = min(45, max(-45, deg_x)) / 45
 
     # Calculate steering factors:
@@ -43,13 +43,13 @@ def calculate_speed_command():
 def remote_control_send_update(mode):
     # We are in driving mode, send update command
     if mode == Mode.REMOTE_CONTROL_DRIVING:
-        speed_command = calculate_speed_command()
+        speed_command = _calculate_speed_command()
         print('[RC] Sending speed upate: ' + speed_command)
         radio.send(speed_command)
     # We are in parking mode, just print and info
     elif mode == Mode.REMOTE_CONTROL_PARKING:
         print('[RC] Parking')
-    sleep(POLL_DELAY)
+    sleep(_POLL_DELAY)
 
 def remote_control_send_stop_command():
     radio.send('0:0')

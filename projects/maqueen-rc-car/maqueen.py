@@ -5,9 +5,7 @@ Version: 2.0.1
 from micropython import const
 from microbit import i2c, display, Image, pin13, pin14, pin15, accelerometer, compass
 from machine import time_pulse_us
-from neopixel import NeoPixel
 from time import sleep_ms
-from math import sqrt, asin, cos, sin, atan2, pi
 
 class Motor:
     LEFT = 0

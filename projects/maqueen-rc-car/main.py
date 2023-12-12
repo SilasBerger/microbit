@@ -9,34 +9,34 @@ radio.on()
 radio.config(group=23, power=5)
 
 # Set this Microbit to mode "remote control: parking" by default
-mode = Mode.REMOTE_CONTROL_PARKING
+_mode = Mode.REMOTE_CONTROL_PARKING
 display_indicate_remote_control_parking()
 
 # Define a function that toggles between car controller and remote control mode
-def toggle_operation_mode():
-    global mode
+def _toggle_operation_mode():
+    global _mode
     # We were in remote control mode, switch to car control
-    if mode == Mode.REMOTE_CONTROL_PARKING or mode == Mode.REMOTE_CONTROL_DRIVING:
-        mode = Mode.CAR_CONTROLLER
+    if _mode == Mode.REMOTE_CONTROL_PARKING or _mode == Mode.REMOTE_CONTROL_DRIVING:
+        _mode = Mode.CAR_CONTROLLER
         car_controller_initialize()
         display_indicate_car_controller_mode()
     # We were in car controller mode, switch to "remote control: parking"
-    elif mode == Mode.CAR_CONTROLLER:
-        mode = Mode.REMOTE_CONTROL_PARKING
+    elif _mode == Mode.CAR_CONTROLLER:
+        _mode = Mode.REMOTE_CONTROL_PARKING
         remote_control_send_init_command()
         display_indicate_remote_control_parking()
 
 # Define a function that toggles the remote control between "parking" and "driving"
-def remote_control_toggle_parking_and_driving():
-    global mode
+def _toggle_parking_and_driving():
+    global _mode
     # We were in parking mode, switch to driving
-    if mode == Mode.REMOTE_CONTROL_PARKING:
-        mode = Mode.REMOTE_CONTROL_DRIVING
+    if _mode == Mode.REMOTE_CONTROL_PARKING:
+        _mode = Mode.REMOTE_CONTROL_DRIVING
         remote_control_send_init_command()
         display_indicate_remote_control_driving()
     # We were in driving mode, send stop command and switch to parking
-    elif mode == Mode.REMOTE_CONTROL_DRIVING:
-        mode = Mode.REMOTE_CONTROL_PARKING
+    elif _mode == Mode.REMOTE_CONTROL_DRIVING:
+        _mode = Mode.REMOTE_CONTROL_PARKING
         remote_control_send_stop_command()
         display_indicate_remote_control_parking()
 
@@ -44,20 +44,21 @@ def remote_control_toggle_parking_and_driving():
 while True:
     # Button A was pressed, toggle the operation mode
     if button_a.was_pressed():
-        toggle_operation_mode()
+        _toggle_operation_mode()
 
     # Button B was pressed, toggle remote between "paring" and "driving"
     if button_b.was_pressed():
-        remote_control_toggle_parking_and_driving()
+        _toggle_parking_and_driving()
 
     # This microbit is in remote control mode, send speed update if "driving"
-    if mode == Mode.REMOTE_CONTROL_PARKING or mode == Mode.REMOTE_CONTROL_DRIVING:
-        remote_control_send_update(mode)
+    if _mode == Mode.REMOTE_CONTROL_PARKING or _mode == Mode.REMOTE_CONTROL_DRIVING:
+        remote_control_send_update(_mode)
 
     # This microbit is in car controller mode, process speed command
-    elif mode == Mode.CAR_CONTROLLER:
+    elif _mode == Mode.CAR_CONTROLLER:
+        car_controller_verify_no_obstacles()
         car_controller_process_command()
 
     # Something went wrong, we don't know that mode...
     else:
-        raise Exception('[MAIN] Undefined mode: ' + str(mode))
+        raise Exception('[MAIN] Undefined mode: ' + str(_mode))
