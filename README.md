@@ -17,3 +17,9 @@ all projects are developed within the [Microbit Python editor](https://python.mi
 
 ## Maqueen library
 https://gbsl-informatik.github.io/maqueen-plus-v2-mpy/docs/
+
+## Learnings
+### Program size limitation
+There is a limit to how large a Microbit program can be. Once a program exceeds tha limit, the Python editor will fail
+when trying to download the `.hex` file. This was for example the case in the `maqueen-rc-car` project, where I ended up
+having to remove parts of the `maqueen` library to reduce the code size.
