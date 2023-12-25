@@ -5,7 +5,7 @@ MAX_SPEED = 255
 POLL_DELAY = 50
 
 # Enable or disable obstacle detection
-OBSTACLE_DETECTION_ENABLED = True
+OBSTACLE_DETECTION_ENABLED = False
 
 # Anything closer is considered an obstacle
 SAFETY_DISTANCE_CM = 10
