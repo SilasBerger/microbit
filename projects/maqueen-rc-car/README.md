@@ -52,7 +52,7 @@ set to `car controller` mode. If it can't find one, it crashes. Disconnect the M
 reconnect it, to resolve the issue.
 
 ***
-**Issue:** Obstacle detection is not behaving as expected.
+**Issue:** _Obstacle detection is not behaving as expected._
 
 **Remedy:** Obstacle detection is not yet fully stable. For now, it is recommended disable it in `config.py`:
 ```python
