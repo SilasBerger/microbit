@@ -1,11 +1,15 @@
 from microbit import *
-from mockueen import * # TODO: Change this back to the regular library.
+from maqueen import *
 from helper import play_system_error_alarm, play_driver_error_alarm
-from config import OBSTACLE_DETECTION_ENABLED, SAFETY_DISTANCE_CM
+from config import OBSTACLE_DETECTION_ENABLED, SAFETY_DISTANCE_CM, MAX_SUBSEQUENT_SAFETY_DISTANCE_VIOLATIONS
 import radio
 
-# If this is set to True, no motor speed updates be applied
+# If this is set to True, no motor speed updates be applied.
 _failsafe_engaged = False
+
+# If we see more than this many too-close readings in a row,
+# we trigger need the obstacle detection protocol (if enabled).
+_safety_distance_violation_count = 0
 
 def _stop_motors():
     motor_stop(Motor.ALL)
@@ -57,9 +61,11 @@ def car_controller_process_command():
 # Stop motors, reset failsafe, purge buffered radio messages
 def car_controller_initialize():
     global _failsafe_engaged
+    global _safety_distance_violation_count
     print('[CAR] Initializing...')
     _stop_motors()
     _failsafe_engaged = False
+    _safety_distance_violation_count = 0
     has_radio_messages = True
     while has_radio_messages:
         msg = radio.receive()
@@ -68,12 +74,27 @@ def car_controller_initialize():
 # Check ultrasonic sensor against safety distance, engage
 # failsafe if an obstacle is too close
 def car_controller_verify_no_obstacles():
-    if not OBSTACLE_DETECTION_ENABLED:
+    global _safety_distance_violation_count
+
+    # If obstacle detection is not enabled, or if we already are in failsafe mode,
+    # do nothing here.
+    if not OBSTACLE_DETECTION_ENABLED or _failsafe_engaged:
         return
 
-    distance_cm = ultrasonic()
-    if distance_cm < SAFETY_DISTANCE_CM:
+    # Get the current distance reading.
+    distance_cm = ultrasonic(trig = pin1, echo = pin2)
+
+    # If we have a safe distance, reset subsequent violation count and return.
+    if distance_cm >= SAFETY_DISTANCE_CM:
+        _safety_distance_violation_count = 0
+        return
+
+    # We don't have a safe distance. Increment the subsequent violation count.
+    # If the count surpasses a threshold, trigger obstacle detection.
+    _safety_distance_violation_count += 1
+    if (_safety_distance_violation_count > MAX_SUBSEQUENT_SAFETY_DISTANCE_VIOLATIONS):
         _engage_failsafe()
+        _safety_distance_violation_count
         print('[CAR] Obstacle detected: ' + str(distance_cm) + 'cm')
         play_driver_error_alarm()
 
