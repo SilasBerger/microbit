@@ -5,6 +5,7 @@
 
 # Imports go at the top
 from microbit import *
+import music
 
 # Show heart image on start
 display.show(Image.HEART)
