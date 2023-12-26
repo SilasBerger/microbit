@@ -1,7 +1,7 @@
 # Maqueen RC Car
 This project combines two Microbits and a Maqueen robot into an RC car setup with a gyroscopic remote control.
 
-[![Maqueen RC Car Demo](../../docs/img/maqueen_rc_car_project_demo.png)](https://youtu.be/7uBHm0UX_Pk "Maqueen RC Car Demo")
+[![Maqueen RC Car Demo](../../docs/img/maqueen_rc_car_project_demo.png)](https://youtu.be/pJhepMn8yeE "Maqueen RC Car Demo")
 
 One Microbit acts as a car controller and is installed into the Maqueen robot, while the other one is used as the remote
 control. The driver controls the throttle and steers the car by tilting the remote control forward and sideways,
