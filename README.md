@@ -1,6 +1,6 @@
 # Knowledge Base Microbit and Maqueen
-A central place for code snippets, ideas, learnings and experiments with Microbit and Maqueen. Unless stated otherwise,
-all projects are developed within the [Microbit Python editor](https://python.microbit.org/v/3/project).
+A central place for projects, ideas, learnings, code snippets, and experiments with Microbit and Maqueen. Unless stated
+otherwise, all projects are developed within the [Microbit Python editor](https://python.microbit.org/v/3/project).
 
 ## Featured Projects
 ### Maqueen RC Car
