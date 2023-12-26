@@ -2,6 +2,16 @@
 A central place for code snippets, ideas, learnings and experiments with Microbit and Maqueen. Unless stated otherwise,
 all projects are developed within the [Microbit Python editor](https://python.microbit.org/v/3/project).
 
+## Featured Projects
+### Maqueen RC Car
+[-> see project](projects/maqueen-rc-car/README.md)
+
+### Health Points
+[-> see project](projects/health-points/README.md)
+
+### Jukebox
+[-> see project](projects/various/jukebox.py)
+
 ## MakeCode Editor
 * https://makecode.microbit.org/#editor
 * In the background: transpiled to JavaScript
