@@ -1,16 +1,19 @@
 # Knowledge Base Microbit and Maqueen
-A central place for code snippets, ideas, learnings and experiments with Microbit and Maqueen. Unless stated otherwise,
-all projects are developed within the [Microbit Python editor](https://python.microbit.org/v/3/project).
+A central place for projects, ideas, learnings, code snippets, and experiments with Microbit and Maqueen. Unless stated
+otherwise, all projects are developed within the [Microbit Python editor](https://python.microbit.org/v/3/project).
 
 ## Featured Projects
 ### Maqueen RC Car
-[-> see project](projects/maqueen-rc-car/README.md)
+[![Maqueen RC Car Demo](docs/img/maqueen_rc_car_project_demo.png)](https://youtu.be/pJhepMn8yeE "Maqueen RC Car Demo")<br>
+➡️ Check out the [project source](projects/maqueen-rc-car/README.md).
 
 ### Health Points
-[-> see project](projects/health-points/README.md)
+[![Health Points Demo](docs/img/microbit_project_demo_health_points_still.png)](https://youtu.be/UUIyFgzFy2k "Health Points Demo")<br>
+➡️ Check out the [project source](projects/health-points/README.md).
 
 ### Jukebox
-[-> see project](projects/various/jukebox.py)
+[![Jukebox Demo](docs/img/microbit_project_demo_jukebox_still_ed.png)](https://youtu.be/0dCZKqrX-ig "Jukebox Points Demo")<br>
+➡️ Check out the [project source](projects/various/jukebox.py).
 
 ## MakeCode Editor
 * https://makecode.microbit.org/#editor
