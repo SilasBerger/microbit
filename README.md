@@ -4,8 +4,8 @@ otherwise, all projects are developed within the [Microbit Python editor](https:
 
 ## Featured Projects
 ### Maqueen RC Car
-➡️ Check out the [project source](projects/maqueen-rc-car/README.md).
 [![Maqueen RC Car Demo](docs/img/maqueen_rc_car_project_demo.png)](https://youtu.be/7uBHm0UX_Pk "Maqueen RC Car Demo")<br>
+➡️ Check out the [project source](projects/maqueen-rc-car/README.md).
 
 ### Health Points
 [![Health Points Demo](docs/img/microbit_project_demo_health_points_still.png)](https://youtu.be/UUIyFgzFy2k "Health Points Demo")<br>
