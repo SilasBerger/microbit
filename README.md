@@ -8,11 +8,10 @@ all projects are developed within the [Microbit Python editor](https://python.mi
 
 ### Health Points
 [-> see project](projects/health-points/README.md)
+[![Health Points Demo](https://img.youtube.com/vi/UUIyFgzFy2k/0.jpg)](https://youtu.be/UUIyFgzFy2k "Health Points Demo")
 
 ### Jukebox
 [-> see project](projects/various/jukebox.py)
-<a href="https://github.com/your-username/your-repository" style="display:inline-block;background-color:#24292e;color:#ffffff;padding:10px 20px;text-decoration:none;border-radius:5px;font-weight:bold;">Check it out on GitHub</a>
-
 
 ## MakeCode Editor
 * https://makecode.microbit.org/#editor
