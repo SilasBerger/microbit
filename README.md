@@ -7,8 +7,9 @@ all projects are developed within the [Microbit Python editor](https://python.mi
 [-> see project](projects/maqueen-rc-car/README.md)
 
 ### Health Points
-[-> see project](projects/health-points/README.md)
 [![Health Points Demo](https://img.youtube.com/vi/UUIyFgzFy2k/0.jpg)](https://youtu.be/UUIyFgzFy2k "Health Points Demo")
+
+[-> see project](projects/health-points/README.md)
 
 ### Jukebox
 [-> see project](projects/various/jukebox.py)
