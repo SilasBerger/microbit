@@ -1,9 +1,9 @@
 # Maqueen RC Car
-This project combines two Microbits and a Maqueen robot into an RC car setup with a gyroscopic remote control.
+This project combines two Micro:bits and a Maqueen robot into an RC car setup with a gyroscopic remote control.
 
 [![Maqueen RC Car Demo](../../docs/img/maqueen_rc_car_project_demo.png)](https://youtu.be/pJhepMn8yeE "Maqueen RC Car Demo")
 
-One Microbit acts as a car controller and is installed into the Maqueen robot, while the other one is used as the remote
+One Micro:bit acts as a car controller and is installed into the Maqueen robot, while the other one is used as the remote
 control. The driver controls the throttle and steers the car by tilting the remote control forward and sideways,
 respectively. The car controller receives the remote's speed commands via the radio module and uses them to control 
 the speed of Maqueen's two motors. If it detects something having gone wrong, the car controller stops the motors,
@@ -12,17 +12,17 @@ enters a failsafe mode, and sounds and alarm.
 ## Usage
 ### Installation and setup
 - Load the program in the [Python editor](https://python.microbit.org/v/3/project), e.g. by importing the hex file.
-- Upload it to **two** Microbits.
-- Connect one Microbit to the Maqueen robot - this Microbit is now the _car controller_.
+- Upload it to **two** Micro:bits.
+- Connect one Micro:bit to the Maqueen robot - this Micro:bit is now the _car controller_.
 - Turn on the Maqueen robot.
 - Use the `A` button on the car controller to set it into `car controller` mode, indicated by a `C` on the screen.
-- Connect the other Microbit to a battery pack (or leave it plugged into a USB port). This Microbit is now the _remote control_.
+- Connect the other Micro:bit to a battery pack (or leave it plugged into a USB port). This Micro:bit is now the _remote control_.
 - Use the `A` button to set the remote control into `remote control: parking` mode, indicated by a `P` on the screen.
   - **Caution:** If the screen is showing a `D` instead of a `P`, press the `B` button once to switch from `driving` into `parking` mode.
 
 ### Driving
 After completing the installation and setup steps, the Maqueen RC car is now ready for driving.
-- Hold the remote control upright, in landscape orientation, with the Microbit logo facing toward you. Tilt slightly toward yourself.
+- Hold the remote control upright, in landscape orientation, with the Micro:bit logo facing toward you. Tilt slightly toward yourself.
 - Press the `B` button on the remote to switch from `parking` to `driving` mode, indicated by a `D` on the screen.
 - Start tilting the remote control away from yourself to let the Maqueen drive forward. Tilt sideways to steer.
 
@@ -49,8 +49,8 @@ happens, blame the driver.
 ***
 **Issue:** _When I press the `A` button on the remote control, it crashes._
 
-**Solution:** This behavior is expected. The Microbit tries to start communicating with its Maqueen, as soon as it is
-set to `car controller` mode. If it can't find one, it crashes. Disconnect the Microbit from its power source and
+**Solution:** This behavior is expected. The Micro:bit tries to start communicating with its Maqueen, as soon as it is
+set to `car controller` mode. If it can't find one, it crashes. Disconnect the Micro:bit from its power source and
 reconnect it, to resolve the issue.
 
 ***
@@ -65,9 +65,9 @@ Alternatively, search this section for a specific issue to continue the troubles
 detection enabled.
 
 ***
-**Issue:** _Obstacle detection triggers immediately, as soon as I turn the Microbit in to car controller mode._
+**Issue:** _Obstacle detection triggers immediately, as soon as I turn the Micro:bit in to car controller mode._
 
-Upload the changed script to (at least) the car controller Microbit and the issue should be fixed.
+Upload the changed script to (at least) the car controller Micro:bit and the issue should be fixed.
 
 **Solution:** This is likely due to an incorrect pin configuration for the ultrasonic sensor (assuming that it is
 properly connected to Maqueen). First, check the following labels on your Maqueen robot to determine the ultrasonic pins
@@ -87,7 +87,7 @@ Make sure that `car_controller.py` includes the required imports at the top of t
 from microbit import *  # or 'from microbit import pin1, pin2'
 ```
 
-Upload the changed script to (at least) the car controller Microbit and the issue should be fixed.
+Upload the changed script to (at least) the car controller Micro:bit and the issue should be fixed.
 
 ***
 **Issue:** _Maqueen makes a high-pitched buzzing sound after detecting an obstacle. The car also doesn't react properly
