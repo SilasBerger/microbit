@@ -8,11 +8,11 @@ otherwise, all projects are developed within the [Microbit Python editor](https:
 ➡️ Check out the [project source](projects/maqueen-rc-car/README.md).
 
 ### Health Points
-[![Health Points Demo](docs/img/microbit_project_demo_health_points_still.png)](https://youtu.be/XqjzFh4eGzI "Health Points Demo")<br>
+[![Health Points Demo](docs/img/project_thumbnails/health_points_thumbnail_yt.png)](https://youtu.be/XqjzFh4eGzI "Health Points Demo")<br>
 ➡️ Check out the [project source](projects/health-points/README.md).
 
 ### Jukebox
-[![Jukebox Demo](docs/img/microbit_project_demo_jukebox_still_ed.png)](https://youtu.be/3yAkX2k_DGs "Jukebox Demo")<br>
+[![Jukebox Demo](docs/img/project_thumbnails/jukebox_thumbnail_yt.png)](https://youtu.be/3yAkX2k_DGs "Jukebox Demo")<br>
 ➡️ Check out the [project source](projects/jukebox.py).
 
 ## MakeCode Editor
